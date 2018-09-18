@@ -1,0 +1,118 @@
+@import './variable'
+
+html
+  font-size: 6.25vw
+html,body
+  font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback'
+  user-select: none
+  -webkit-tap-highlight-color: transparent
+  background: #ffffff
+  color: #222222
+  overflow: hidden
+
+.text-btn
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 1.8rem
+  height: 1.8rem
+  border-radius: 50%
+  border: 0.03rem solid #e2e2e2
+  box-sizing: border-box
+  font-size: 1rem
+  color: #c7c7c7
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+  -webkit-appearance: none !important
+  margin: 0
+// 改变cube-ui dialog中confirmText颜色样式
+.cube-dialog-btn_highlight
+  color: $color-theme!important
+
+// slide动画
+.slide-enter-active, .slide-leave-active
+  transition: all 0.3s
+.slide-enter, .slide-leave-to
+  transform: translate3d(100%, 0, 0)
+// fade动画
+.fade-enter-active, .fade-leave-active
+  transition: all 0.3s
+.fade-enter, .fade-leave-to
+  opacity 0
+
+.border-top-1px, .border-right-1px, .border-bottom-1px, .border-left-1px
+  position: relative
+  &::before, &::after
+    content: ""
+    display: block
+    position: absolute
+    transform-origin: 0 0
+
+.border-top-1px
+  &::before
+    border-top: 1px solid #e8e8e8
+    left: 0
+    top: 0
+    width: 100%
+    transform-origin: 0 top
+
+.border-right-1px
+  &::after
+    border-right: 1px solid #e8e8e8
+    top: 0
+    right: 0
+    height: 100%
+    transform-origin: right 0
+
+.border-bottom-1px
+  &::after
+    border-bottom: 1px solid #e8e8e8
+    left: 0
+    bottom: 0
+    width: 100%
+    transform-origin: 0 bottom
+
+.border-left-1px
+  &::before
+    border-left: 1px solid #e8e8e8
+    top: 0
+    left: 0
+    height: 100%
+    transform-origin: left 0
+
+@media (min-resolution: 2dppx)
+  .border-top-1px
+    &::before
+      width: 200%
+      transform: scale(.5) translateZ(0)
+  .border-right-1px
+    &::after
+      height: 200%
+      transform: scale(.5) translateZ(0)
+  .border-bottom-1px
+    &::after
+      width: 200%
+      transform: scale(.5) translateZ(0)
+  .border-left-1px
+    &::before
+      height: 200%
+      transform: scale(.5) translateZ(0)
+
+@media (min-resolution: 3dppx)
+  .border-top-1px
+    &::before
+      width: 300%
+      transform: scale(.333) translateZ(0)
+  .border-right-1px
+    &::after
+      height: 300%
+      transform: scale(.333) translateZ(0)
+  .border-bottom-1px
+    &::after
+      width: 300%
+      transform: scale(.333) translateZ(0)
+  .border-left-1px
+    &::before
+      height: 300%
+      transform: scale(.333) translateZ(0)
